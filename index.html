@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daniel Tilney</title>
+  <meta name="description" content="Daniel Tilney's personal blog.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Apply dark mode before render to prevent flash
+    (function() {
+      const saved = localStorage.getItem('darkMode');
+      let dark;
+      if (saved !== null) {
+        dark = saved === 'true';
+      } else {
+        dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      }
+      if (dark) document.documentElement.classList.add('dark');
+    })();
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-name"><a href="/">Daniel Tilney</a></div>
+      <div class="header-right">
+        <div class="toggle-switch">
+          <input type="checkbox" id="color-mode" class="toggle-checkbox">
+          <label for="color-mode" class="toggle-label"></label>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <article>
+      <div class="container">
+        <section class="home-section">
+          <h2>Posts</h2>
+          <ul class="bullet-list">
+            <li><a href="posts/quotes.html">Quotes</a></li>
+          </ul>
+        </section>
+      </div>
+    </article>
+  </main>
+
+  <script>
+    // Dark mode toggle
+    const checkbox = document.getElementById('color-mode');
+    checkbox.checked = document.documentElement.classList.contains('dark');
+    checkbox.addEventListener('change', function() {
+      document.documentElement.classList.toggle('dark', this.checked);
+      localStorage.setItem('darkMode', this.checked ? 'true' : 'false');
+    });
+    // Sync OS preference if no saved preference
+    if (localStorage.getItem('darkMode') === null) {
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (localStorage.getItem('darkMode') === null) {
+          document.documentElement.classList.toggle('dark', e.matches);
+          checkbox.checked = e.matches;
+        }
+      });
+    }
+  </script>
+</body>
+</html>
