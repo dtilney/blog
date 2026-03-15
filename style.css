@@ -162,7 +162,11 @@ body {
   padding: 2.5rem 0 4rem;
 }
 
-/* ---- Home Page ---- */
+.home-intro img {
+  display: block;
+  max-width: 100%;
+  margin-bottom: 1.25rem;
+}
 .home-intro {
   font-size: 1rem;
   line-height: 1.8;
