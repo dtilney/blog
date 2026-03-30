@@ -256,6 +256,37 @@ body {
   margin-bottom: 1.25rem;
 }
 
+/* ---- Quote Filters ---- */
+.quote-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.quote-filter {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.quote-filter:hover {
+  color: var(--color-text);
+  border-color: var(--color-text-secondary);
+}
+
+.quote-filter.active {
+  background: var(--color-text);
+  color: var(--color-bg);
+  border-color: var(--color-text);
+}
+
 /* ---- Quotes ---- */
 .quotes-list {
   list-style: none;
@@ -263,7 +294,7 @@ body {
 }
 
 .quotes-list li {
-  margin-bottom: 2rem;
+  margin-bottom: 2.25rem;
 }
 
 .quote-text {
@@ -271,25 +302,29 @@ body {
   font-size: 1rem;
   line-height: 1.8;
   font-style: italic;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.2rem;
 }
 
-.quote-attribution {
-  font-size: 0.875rem;
+.quote-meta {
+  font-size: 0.84rem;
   color: var(--color-text-secondary);
   font-style: normal;
+  margin-bottom: 0;
 }
 
-.quote-attribution::before {
-  content: "— ";
-}
-
-.quote-date-line {
+.quote-meta-detail {
   font-size: 0.78rem;
   color: var(--color-text-secondary);
   opacity: 0.6;
-  margin-top: 0.2rem;
-  font-style: normal;
+}
+
+/* Override .post-content p margins for quote elements */
+.post-content .quote-text {
+  margin-bottom: 0.2rem;
+}
+
+.post-content .quote-meta {
+  margin-bottom: 0;
 }
 
 hr.divider {
