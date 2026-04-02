@@ -350,7 +350,7 @@
       document.querySelectorAll('.quote-filter').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       const filter = btn.dataset.filter;
-      document.querySelectorAll('.quotes-list li').forEach(li => {
+      document.querySelectorAll('.quotes-list > li').forEach(li => {
         if (filter === 'all' || li.dataset.category === filter) {
           li.style.display = '';
         } else {
