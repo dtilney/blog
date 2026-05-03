@@ -274,14 +274,12 @@ body {
 }
 
 .post-content sup a {
-  color: var(--color-text-secondary);
   text-decoration: none;
   font-size: 0.75rem;
   font-style: normal;
 }
 
 .post-content sup a:hover {
-  color: var(--color-text);
   text-decoration: underline;
 }
 
@@ -289,7 +287,6 @@ body {
   padding-left: 1.25rem;
   font-size: 0.875rem;
   line-height: 1.7;
-  color: var(--color-text-secondary);
 }
 
 .bibliography li {
@@ -297,13 +294,8 @@ body {
 }
 
 .bibliography a {
-  color: var(--color-text-secondary);
   text-decoration: underline;
   text-underline-offset: 2px;
-}
-
-.bibliography a:hover {
-  color: var(--color-text);
 }
 
 /* ---- Quote Filters ---- */
