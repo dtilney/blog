@@ -274,6 +274,7 @@ body {
 }
 
 .post-content sup a {
+  color: var(--color-text);
   text-decoration: none;
   font-size: 0.75rem;
   font-style: normal;
@@ -294,6 +295,7 @@ body {
 }
 
 .bibliography a {
+  color: var(--color-text);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
